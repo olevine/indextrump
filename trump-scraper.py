@@ -66,7 +66,7 @@ def get_index():
         # send the tweet!
         send_tweet(paper, len(alltrumps))
         # and wait a few sec before the next one
-        time.sleep(20)
+        time.sleep(10)
 	  
         #and show 'em
 #        for tr in alltrumps:
