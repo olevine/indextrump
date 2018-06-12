@@ -18,9 +18,9 @@ def send_tweet(paper, trumpindex):
     user = api.me()
     print (user.name)
 
-    update = "Today's #TrumpIndex for " + paper + " = " + str(trumpindex)
+    update = "Today's " + paper + " homepage features " + str(trumpindex) + " mentions of Trump #TrumpIndex"
 
-#    send_update(api, update)
+    send_update(api, update)
 
 
 def send_update(api, txt):
@@ -59,7 +59,7 @@ def get_index():
         print(len(alltrumps))
 
         # send the tweet!
-#        send_tweet(paper[0], len(alltrumps))
+        send_tweet(paper[0], len(alltrumps))
 	  
         #and show 'em
 #        for tr in alltrumps:
