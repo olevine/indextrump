@@ -1,1 +1,1 @@
-web: python trump-scraper.py
+worker: python trump-scraper.py
