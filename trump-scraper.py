@@ -19,7 +19,7 @@ def send_tweet(paper, trumpindex):
     user = api.me()
     print (user.name)
 
-    update = "Today's " + paper + " homepage features " + str(trumpindex) + " mentions of Trump #TrumpIndex"
+    update = "Today's " + paper[0] + " " + paper[2] + " homepage features " + str(trumpindex) + " mentions of Trump " + paper[1] + " #TrumpIndex"
 
     send_update(api, update)
 
@@ -38,11 +38,11 @@ def get_index():
 
     # pages we track
 
-    tracking_papers = [("Washington Post","https://www.washingtonpost.com"),
-                       ("Chicago Tribune","https://www.chicagotribune.com"),
-                       ("New York Times","https://www.nytimes.com"),
-                       ("CNN","https://www.cnn.com"),
-                       ("NBC News","https://www.nbcnews.com/")]
+    tracking_papers = [("Washington Post","https://www.washingtonpost.com", "@WashingtonPost"),
+                       ("Chicago Tribune","https://www.chicagotribune.com", "@chicagotribune"),
+                       ("New York Times","https://www.nytimes.com", "@nytimes"),
+                       ("CNN","https://www.cnn.com", "@cnn"),
+                       ("NBC News","https://www.nbcnews.com/", "@nbcnews")]
 
     for paper in tracking_papers:
         print(paper[0])
@@ -60,7 +60,7 @@ def get_index():
         print(len(alltrumps))
 
         # send the tweet!
-        send_tweet(paper[0], len(alltrumps))
+        send_tweet(paper, len(alltrumps))
 	  
         #and show 'em
 #        for tr in alltrumps:
