@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup
 
 def send_tweet(paper, trumpindex):
     # Twitter requires all requests to use OAuth for authentication
-    auth = tweepy.OAuthHandler(os.environ[consumer_key], os.environ[consumer_secret]) 
+    auth = tweepy.OAuthHandler(os.environ["consumer_key"], os.environ["consumer_secret"]) 
 
-    auth.set_access_token(os.environ[access_token], os.environ[access_secret])
+    auth.set_access_token(os.environ["access_token"], os.environ["access_secret"])
 
      #Construct the API instance
     api = tweepy.API(auth) # create an API object
