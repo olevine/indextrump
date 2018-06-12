@@ -1,6 +1,7 @@
 # import libraries
 import re
 import tweepy
+import os
 from secrets import *
 from urllib import request
 from bs4 import BeautifulSoup
