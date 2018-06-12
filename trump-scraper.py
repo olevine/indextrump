@@ -2,6 +2,7 @@
 import re
 import tweepy
 import os
+import time
 from secrets import *
 from urllib import request
 from bs4 import BeautifulSoup
@@ -42,7 +43,10 @@ def get_index():
                        ("Chicago Tribune","https://www.chicagotribune.com", "@chicagotribune"),
                        ("New York Times","https://www.nytimes.com", "@nytimes"),
                        ("CNN","https://www.cnn.com", "@cnn"),
-                       ("NBC News","https://www.nbcnews.com/", "@nbcnews")]
+                       ("Fox News","https://www.foxnews.com", "@FoxNews"),
+                       ("NBC News","https://www.nbcnews.com/", "@nbcnews"),
+                       ("CBS News","https://www.cbsnews.com/","@CBSNews"),
+                       ("ABC News","https://www.abcnews.go.com/","@ABC")]
 
     for paper in tracking_papers:
         print(paper[0])
@@ -61,6 +65,8 @@ def get_index():
 
         # send the tweet!
         send_tweet(paper, len(alltrumps))
+        # and wait a few sec before the next one
+        time.sleep(20)
 	  
         #and show 'em
 #        for tr in alltrumps:
