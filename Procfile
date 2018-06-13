@@ -1,1 +1,1 @@
-worker: python trump-scraper.py
+worker: python indextrump.py
