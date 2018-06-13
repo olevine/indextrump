@@ -49,30 +49,28 @@ def get_index():
                        ("ABC News","https://www.abcnews.go.com/","@ABC")]
 
     for paper in tracking_papers:
-        print(paper[0])
-        page = request.urlopen(paper[1])
-        soup = BeautifulSoup(page, 'html.parser')
-        # test
-        print(soup.title)
-        # find all the Trumps
-        # get the text first
-        alltext = soup.get_text()
+        try:
+            print(paper[0])
+            page = request.urlopen(paper[1])
+            soup = BeautifulSoup(page, 'html.parser')
+            # test
+            print(soup.title)
+            # find all the Trumps
+            # get the text first
+            alltext = soup.get_text()
 
-        alltrumps = [m.start() for m in re.finditer('Trump', alltext)]
-    
-        #alltrumps = soup.find_all(string="Trump")
-        print(len(alltrumps))
+            alltrumps = [m.start() for m in re.finditer('Trump', alltext)]
+        
+            #alltrumps = soup.find_all(string="Trump")
+            print(len(alltrumps))
 
-        # send the tweet!
-        send_tweet(paper, len(alltrumps))
-        # and wait a few sec before the next one
-        time.sleep(10)
+            # send the tweet!
+            send_tweet(paper, len(alltrumps))
+            # and wait a few sec before the next one
+            time.sleep(10)
+        except Exception as e:
+            print(e)
 	  
-        #and show 'em
-#        for tr in alltrumps:
-            # show 10 chars either side
-#            print(alltext[tr-15:tr+20])
-
 
 
 if __name__ == '__main__':
