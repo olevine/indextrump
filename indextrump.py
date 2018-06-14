@@ -20,7 +20,7 @@ def send_tweet(paper, trumpindex):
     user = api.me()
     print (user.name)
 
-    update = "Today's " + paper[2] + " homepage features " + str(trumpindex) + " mentions of Trump " + paper[1] + " #TrumpIndex"
+    update = "Today's " + paper[0] + " homepage features " + str(trumpindex) + " mentions of Trump " + paper[1] + " #TrumpIndex"
 
     send_update(api, update)
 
