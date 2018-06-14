@@ -46,7 +46,8 @@ def get_index():
                        ("Fox News","https://www.foxnews.com", "@FoxNews"),
                        ("NBC News","https://www.nbcnews.com/", "@nbcnews"),
                        ("CBS News","https://www.cbsnews.com/","@CBSNews"),
-                       ("ABC News","https://www.abcnews.go.com/","@ABC")]
+                       ("ABC News","https://abcnews.go.com/","@ABC"),
+					   ("The Guardian","https://www.theguardian.com/us","@GuardianUS")]
 
     for paper in tracking_papers:
         try:
