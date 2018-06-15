@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 from airtable import airtable
 
 at = airtable.Airtable(os.environ['airtable_indextrump_base'], os.environ['airtable_apikey'])
-at.get('IndexTrump')
 
 def send_tweet(paper, trumpindex):
     # Twitter requires all requests to use OAuth for authentication
@@ -85,7 +84,6 @@ def get_index():
         except Exception as e:
             print(e)
 	  
-
 
 if __name__ == '__main__':
     get_index()
