@@ -1,0 +1,4 @@
+Simple app that counts the number of times "Trump" appears in major news homepages, and reports the data to Twitter at @IndexTrump.
+Also saves the data in an Airtable database for future analysis.
+
+“I don’t care what the newspapers say about me as long as they spell my name right.”
